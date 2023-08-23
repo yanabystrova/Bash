@@ -1,0 +1,215 @@
+1. ЗАЙТИ В ДОМАШНЮЮ ДИРЕКТОРИЮ
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_
+$ pwd
+/d/Программирование/тестировщик/QA life/7.0/bash_
+
+2. СОЗДАТЬ ПАПКУ TEST 3
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_
+$ mkdir test3
+
+
+3. ДОБАВИТЬ В ПАПКУ TEST 3 ТРИ ФАЙЛА 4, 5 И 6, В КАЖДОМ ИЗ КОТОРЫХ ДОЛЖНО БЫТЬ ПО 4 СТРОКИ ROW1, ROW2, ROW3, ROW4
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_
+$ cd test3
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ touch 4.txt
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ touch 5.txt
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ touch 6.txt
+
+
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ echo -e "row1\nrow2\nrow3\nrow4" >> 4.txt
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ cat 4.txt
+row1
+row2
+row3
+row4
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ cp 4.txt 5.txt
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ cp 4.txt 6.txt
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ cat 4.txt 5.txt 6.txt
+row1
+row2
+row3
+row4
+row1
+row2
+row3
+row4
+row1
+row2
+row3
+row4
+
+
+
+4. НАЙДИТЕ СТРОКУ ROW2 В ФАЙЛЕ 5
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ grep -i "row2" 5.txt
+row2
+
+
+5. НАЙДИТЕ СТРОКУ ROW В ПАПКЕ TEST3
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ grep -R "row"
+4.txt:row1
+4.txt:row2
+4.txt:row3
+4.txt:row4
+5.txt:row1
+5.txt:row2
+5.txt:row3
+5.txt:row4
+6.txt:row1
+6.txt:row2
+6.txt:row3
+6.txt:row4
+
+
+6. ПОСЧИТАЙТЕ СКОЛЬКО СТРОК С СОДЕРЖИМЫМ ROW В ФАЙЛЕ 6
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ grep -c "row" 6.txt
+4
+
+7. НАЙДИТЕ ФАЙЛ 5 ВНУТРИ ПАПКИ TEST3
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ find 5.txt
+5.txt
+
+
+8. ИСПОЛЬЗУЯ КОМАНДУ FIND, УДАЛИТЕ ФАЙЛ 5
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ find 5.txt -delete
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ ls
+4.txt  6.txt
+
+
+9. ИСПОЛЬЗУЯ КОМАНДУ ECHO, ДОБАВЬТЕ СЛОВО TEST В ФАЙЛ 4
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ echo test > 4.txt
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ cat 4.txt
+test
+
+
+10. ЗАМЕНИТЕ СЛОВО TEST В ФАЙЛЕ 4 НА FAIL
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ sed -i 's/test/file/g' 4.txt
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ cat 4.txt
+fail
+
+
+11. ДОБАВЬТЕ В ФАЙЛ 4 СЛОВО TEST ТАК, ЧТОБЫ СОХРАНИЛОСЬ СОДЕРЖИМОЕ
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ echo test >> 4.txt
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ cat 4.txt
+fail
+test
+
+
+12. ПРОСМОТРИТЕ ВСЕ ПРОЦЕССЫ ДЛЯ ЮЗЕРОВ НЕ ТОЛЬКО В КОНСОЛИ, КОТОРЫЕ ПРОИСХОДЯТ В СИСТЕМЕ
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ ps
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+      900       1     900       9464  ?         197608 09:14:11 /usr/bin/ssh-agent
+     1173    1138    1173       6496  cons0     197608 10:39:11 /usr/bin/ps
+     1138       1    1138       7804  cons0     197608 10:35:32 /usr/bin/bash
+
+
+13. УБЕЙТЕ ПРОЦЕСС 666 В КОНСОЛИ
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ kill 666
+bash: kill: (666) - No such process
+
+
+14. УЗНАЙТЕ ДОСТУПНОСТЬ РЕСУРСА ARTSIOMRUSAU.COM, ИСПОЛЬЗУЯ PING
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_/test3
+$ ping artsiomrusau.com
+
+Pinging artsiomrusau.com [185.215.4.92] with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 185.215.4.92:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+
+15. ОТПРАВЬТЕ 5 ПАКЕТОВ НА САЙТ ARTSIOMRUSAU.COM
+
+$ ping -n 5 artsiomrusau.com
+
+Pinging artsiomrusau.com [185.215.4.92] with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 185.215.4.92:
+    Packets: Sent = 5, Received = 0, Lost = 5 (100% loss),
+
+
+16. ИСПОЛЬЗУЯ GET И КОМАНДУ CURL, ПОЛУЧИТЕ ИНФОРМАЦИЮ О ЗАРЕГИСТРИРОВАННЫХ ПИТОМЦАХ НА https://petstore.swagger.io/
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_
+$ curl --location 'https://petstore.swagger.io/v2/pet/findByStatus?status=available'
+[{"id":9223372036854432892,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372036854432901,"category":{"id":0,"name":"string"},"name":"lolo","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},
+
+ets
+
+
+17. ИСПОЛЬЗУЯ POST И КОМАНДУ CURL, СОЗДАЙТЕ НОВОГО ПОЛЬЗОВАТЕЛЯ НА https://petstore.swagger.io/
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_
+$ curl -X 'POST' \
+>   'https://petstore.swagger.io/v2/user' \
+>   -H 'accept: application/json' \
+>   -H 'Content-Type: application/json' \
+>   -d '{
+>   "id": 555,
+>   "username": "milena",
+>   "firstName": "string",
+>   "lastName": "piter",
+>   "email": "string@mail.ru",
+>   "password": "123",
+>   "phone": "+123654",
+>   "userStatus": 3
+> }
+> '
+{"code":200,"type":"unknown","message":"555"}

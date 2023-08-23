@@ -1,0 +1,179 @@
+1. ОТКРЫТЬ ДОМАШНЮЮ ДИРЕКТОРИЮ
+2. ОПРЕДЕЛИТЬ ИМЯ ПАПКИ, В КОТОРОЙ ВЫ НАХОДИТЕСЬ
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ pwd
+/d/Программирование/тестировщик/QA life/7.0/bash_training
+
+
+
+3. СОЗДАТЬ ВНУТРИ ЭТОЙ ПАПКИ КАТАЛОГ  С ИМЕНЕМ TEST1
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ mkdir test1
+
+
+4. ПЕРЕЙТИ В ПАПКУ TEST1
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cd test1
+
+
+5. СОЗДАТЬ ФАЙЛ 1,2 И 3 ВНУТРИ КАТАЛОГА TEST1
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training/test1
+$ touch 1.json 2.json 3.json
+
+
+6. ПРОВЕРИТЬ СОДЕРЖИМОЕ КАТАЛОГА TEST1
+
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training/test1
+$ ls
+1.json  2.json  3.json
+
+
+
+7. ПЕРЕЙТИ В ДОМАШНЮЮ ДИРЕКТОРИЮ
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cd ..
+
+
+8. СОЗДАТЬ ПАПКУ TEST2 ВНУТРИ ДОМАШНЕЙ ДИРЕКТОРИИ
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ mkdir test2
+
+
+9. УДАЛИТЬ ПАПКУ TEST2
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ rmdir test2
+
+
+10. УДАЛИТЬ ФАЙЛ 2 ИЗ ПАПКИ TEST1
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cd test1
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training/test1
+$ rm 2.json
+
+
+
+11. СОЗДАТЬ ПАПКУ В ДОМАШНЕЙ ДИРЕКТОРИИ TEST3 И ДОБАВИТЬ В НЕЕ ДВА ФАЙЛА
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ mkdir test3
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cd test3
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training/test3
+$ touch 11.json 12.json
+
+
+
+12. УДАЛИТЬ ПАПКУ TEST3
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cd .
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ rm -rf test3
+
+
+
+13. СОЗДАТЬ ПАПКУ TEST4 В ДОМАШНЕЙ ДИРЕКТОРИИ
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cd .
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ mkdir test4
+
+
+
+14. ПЕРЕМЕСТИТЬ ФАЙЛЫ 1 И 3 ИЗ ПАПКИ TEST1 В ПАПКУ TEST4
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cp test1/1.json test.4
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ mv test1/1.json test4
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ ls test1
+3.json
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ ls test4
+1.json
+
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cp test1/3.json test4
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ mv test1/3.json test4
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ ls test1
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ ls test4
+1.json  3.json
+
+ТАКЖЕ ОДНИМ ШАГОМ: 
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cp test1/1.json test1/3 test.4
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ mv test1/.json test1/3 test4
+
+
+15. ДОБАВИТЬ В ФАЙЛ 1 ТРИ СТРОКИ СО СЛОВАМИ LINE
+16. ПОСМОТРЕТЬ СОДЕРЖИМОЕ ФАЙЛА 1
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ echo line line line > 1.json
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ nano 1.json
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cat 1.json
+line
+line
+line
+
+17. ДОБАВЬТЕ В ФАЙЛ 3 ТРИ СТРОКИ СО СЛОВАМИ LINE
+18. ПРОСМОТРИТЕ СОДЕРЖИМОЕ ДВУХ ФАЙЛОВ (1 И 3) СРАЗУ
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ echo line line line > 3.json
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ nano 3.json
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cat 1.json 3.json
+line
+line
+line
+ line
+ line
+ line
+
+19. ИСПОЛЬЗУЯ ОДИН ИЗ РЕДАКТОРОВ ЗАМЕНИТЕ ВСЕ СТРОКИ В ФАЙЛЕ 1
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ nano 1.json
+
+Sony@Sony-PC MINGW64 /d/Программирование/тестировщик/QA life/7.0/bash_training
+$ cat 1.json
+line 11
+line 22
+line 33
+The end
